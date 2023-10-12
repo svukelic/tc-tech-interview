@@ -12,7 +12,7 @@ namespace TCTechInterview.Tests
             {
                 var client = new HttpClient();
 
-                var planets = await client.GetFromJsonAsync<Planet>(BASE_URL + "?galaxyId=" + galaxyId);
+                var planets = client.GetFromJsonAsync<Planet>(BASE_URL + "?galaxyId=" + galaxyId);
 
                 string sql = "INSERT INTO Planets (id, name) VALUES (" + planets.Id + ", " + planets.Name + ");";
                 string connectionString = "Server=.\\127.0.0.1;Database=;User Id=sa;Password=acdefgh1234!;";
